@@ -14,6 +14,6 @@ $ docker run \
   -v $PWD:/app \
   -w /app \
   -u $UID:$GID \
-  takitake/gradle-alpine \
-  gradle wrapper && ./gradlew clean build
+  takitake/gradle-alpine:openjdk10-gradle4 \
+  sh -c 'gradle wrapper && ./gradlew clean build'
 ```
