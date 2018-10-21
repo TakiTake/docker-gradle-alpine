@@ -1,6 +1,10 @@
 # docker-gradle-alpine
 Dockerfile for Gradle
 
+DIRECTORY STRUCTURE WAS CHANGED.
+
+If you want to use same version as previous use `openjdk8-gradle2` tag please.
+
 ## Build
 
 ```sh

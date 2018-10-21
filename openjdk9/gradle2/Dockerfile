@@ -1,9 +1,9 @@
-FROM java:8-jdk-alpine
-MAINTAINER Takeshi Takizawa <takitake.create@gmail.com>
+FROM adoptopenjdk/openjdk9:alpine
+LABEL MAINTAINER="Takeshi Takizawa <takitake.create@gmail.com>"
 
 RUN mkdir /usr/lib/gradle /app
 
-ENV GRADLE_VERSION 2.13
+ENV GRADLE_VERSION 2.14.1
 ENV GRADLE_HOME /usr/lib/gradle/gradle-${GRADLE_VERSION}
 ENV PATH ${PATH}:${GRADLE_HOME}/bin
 
