@@ -1,8 +1,12 @@
-FROM adoptopenjdk/openjdk8:alpine
+FROM adoptopenjdk/openjdk{{.JAVA_VERSION}}:alpine
 LABEL MAINTAINER="Takeshi Takizawa <takitake.create@gmail.com>"
 
 RUN mkdir /usr/lib/gradle /app
-ENV GRADLE_VERSION 4.10.2
+{{ if eq .GRADLE_VERSION "2.14.1" }}
+RUN apk add --no-cache bash
+{{ end -}}
+
+ENV GRADLE_VERSION {{.GRADLE_VERSION}}
 ENV GRADLE_HOME /usr/lib/gradle/gradle-${GRADLE_VERSION}
 ENV PATH ${PATH}:${GRADLE_HOME}/bin
 

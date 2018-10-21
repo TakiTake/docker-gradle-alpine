@@ -12,8 +12,9 @@ $ cd /path/to/gradle/project
 
 $ docker run \
   -v $PWD:/app \
+  -v ~/.gradle:/root/.gradle \
   -w /app \
   -u $UID:$GID \
   takitake/gradle-alpine:openjdk10-gradle4 \
-  sh -c 'gradle wrapper && ./gradlew clean build'
+  sh -c 'gradle clean build'
 ```
